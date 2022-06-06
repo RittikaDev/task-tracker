@@ -1,0 +1,9 @@
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!-- [task] is @Input() task!: Task; from task-item.component.ts -->
+<!-- ="task" is task from "let task of tasks"  -->
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)"
+></app-task-item>
